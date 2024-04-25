@@ -1,4 +1,5 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { LinearGradient } from 'expo-linear-gradient'
 import { ImageBackground, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import { RootStackParamList } from '../../App'
 
@@ -7,7 +8,15 @@ type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>
 const LoginScreen = ({ navigation }: LoginScreenProps) => {
   return (
     <View style={styles.container}>
-      <ImageBackground style={styles.bgImage} source={require('../assets/home-bg.png')}>
+      <LinearGradient
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0.5, y: 0.5 }}
+        colors={['rgba(0,0,0,0)', 'rgba(0,0,0,1)']}
+      >
+        <ImageBackground
+          style={styles.bgImage}
+          source={require('../assets/home-bg.png')}
+        ></ImageBackground>
         <View style={styles.infoContainer}>
           <Text style={styles.titleText}>Coffee so good, your taste buds will love it.</Text>
           <Text style={styles.descriptionText}>
@@ -25,17 +34,22 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
             </View>
           </TouchableHighlight>
         </View>
-      </ImageBackground>
+      </LinearGradient>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    maxHeight: '100%',
+    position: 'relative',
+  },
   bgImage: {
+    position: 'absolute',
     width: '100%',
     zIndex: 0,
-    height: '100%',
+    height: '84%',
   },
   infoContainer: {
     zIndex: 9,
@@ -51,6 +65,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     maxWidth: 340,
     paddingHorizontal: 10,
+    color: '#ffffff',
     fontFamily: 'Sora_500Medium',
   },
   descriptionText: {
