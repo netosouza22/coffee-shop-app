@@ -21,8 +21,9 @@ export const Header = () => {
 const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
-
     gap: 24,
+    paddingTop: 42,
+    paddingBottom: 12,
   },
   headerInfo: {
     width: '100%',
