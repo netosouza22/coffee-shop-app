@@ -1,5 +1,5 @@
 import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { CoffeeType } from '../pages/HomeScreen'
+import { CoffeeType } from '../screens/HomeScreen'
 
 interface CoffeeCategoryProps {
   coffeeTypeChoosed: CoffeeType
@@ -56,6 +56,7 @@ export const CoffeeCategory = ({ coffeeTypeChoosed, handleCoffeeType }: CoffeeCa
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom: 8,
   },
   pressableContainer: {
     flex: 1,
